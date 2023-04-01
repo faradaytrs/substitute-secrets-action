@@ -7,7 +7,7 @@ inputs:
     description: The file or pattern to replace.
   substitutionRegex:
     required: true
-    description: A regex to match tokens. Must contain a capturing group.ßß
+    description: A regex to match tokens. Must contain a capturing group.
   substitutionData:
     required: true
     description: JSON representation of the secrets and variables for substitution.

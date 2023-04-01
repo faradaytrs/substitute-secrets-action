@@ -1,6 +1,7 @@
 import { getInput, setFailed } from "@actions/core";
-import { create } from "@actions/glob";
+
 import { readFile, writeFile } from "fs/promises";
+import { getFiles } from "./helper";
 
 const input = getInput("input", { required: true });
 const substitutionRegexString = getInput("substitutionRegex", { required: true });
@@ -13,13 +14,6 @@ const replacementFunction = (match: string) => {
         console.warn(`No substitution data for ${match}`);
     }
     return substitutionMap[match];
-};
-
-const getFiles = async (pattern: string) => {
-    const globber = await create(pattern, {
-        matchDirectories: false
-    });
-    return await globber.glob();
 };
 
 async function run() {
