@@ -4,5 +4,5 @@ import { getFiles } from "../helper";
 it("input files works", async () => {
     const files = await getFiles("*");
     expect(files).toBeInstanceOf(Array);
-    expect(files).toHaveLength(0);
+    expect(files).not.toHaveLength(0);
 });
