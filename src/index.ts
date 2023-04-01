@@ -16,7 +16,9 @@ const replacementFunction = (match: string) => {
 };
 
 const getFiles = async (pattern: string) => {
-    const globber = await create(pattern);
+    const globber = await create(pattern, {
+        matchDirectories: false
+    });
     return await globber.glob();
 };
 
