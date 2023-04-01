@@ -9,10 +9,12 @@ const substitutionData = getInput("substitutionData", { required: true });
 const substitutionRegex = new RegExp(substitutionRegexString, "gm");
 const substitutionMap = JSON.parse(substitutionData);
 
-const replacementFunction = (match: string) => {
+const stats = new Map<string, number>();
+const replacementFunction = (file: string) => (match: string) => {
     if (substitutionMap[match] == null) {
         console.warn(`No substitution data for ${match}`);
     }
+    stats.set(file, stats.get(file) ?? 0 + 1);
     return substitutionMap[match];
 };
 
@@ -21,8 +23,12 @@ async function run() {
     await Promise.all(
         inputFiles.map(async (file) => {
             const data = await readFile(file, "utf8");
-            const result = data.replace(substitutionRegex, replacementFunction);
-            return await writeFile(file, result);
+            const result = data.replace(substitutionRegex, replacementFunction(file));
+            await writeFile(file, result);
+            if (stats.has(file)) {
+                console.log(`Replaced ${stats.get(file)} matches in ${file}`);
+            }
+            return;
         })
     );
 }
