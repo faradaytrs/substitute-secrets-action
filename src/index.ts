@@ -1,4 +1,4 @@
-import { getInput } from "@actions/core";
+import { getInput, setFailed } from "@actions/core";
 import { create } from "@actions/glob";
 import { readFile, writeFile } from "fs/promises";
 
@@ -22,14 +22,17 @@ const getFiles = async (pattern: string) => {
 
 async function run() {
     const inputFiles = await getFiles(input);
-    await Promise.all(inputFiles.map(async (file) => {
-        const data = await readFile(file, "utf8");
-        const result = data.replace(substitutionRegex, replacementFunction);
-        return await writeFile(file, result);
-    }));
+    await Promise.all(
+        inputFiles.map(async (file) => {
+            const data = await readFile(file, "utf8");
+            const result = data.replace(substitutionRegex, replacementFunction);
+            return await writeFile(file, result);
+        })
+    );
 }
 
-run().then(() => {
-    console.log("done");
-})
-
+run()
+    .then(() => {
+        console.log("done");
+    })
+    .catch((e) => setFailed(e.message));

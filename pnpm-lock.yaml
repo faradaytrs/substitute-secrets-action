@@ -15,6 +15,9 @@ devDependencies:
   '@types/node':
     specifier: 18.15.11
     version: 18.15.11
+  '@vercel/ncc':
+    specifier: 0.36.1
+    version: 0.36.1
   typescript:
     specifier: 5.0.3
     version: 5.0.3
@@ -142,6 +145,11 @@ packages:
 
   /@types/node@18.15.11:
     resolution: {integrity: sha512-E5Kwq2n4SbMzQOn6wnmBjuK9ouqlURrcZDVfbo9ftDDTFt3nk7ZKK4GMOzoYgnpQJKcxwQw+lGaBvvlMo0qN/Q==}
+    dev: true
+
+  /@vercel/ncc@0.36.1:
+    resolution: {integrity: sha512-S4cL7Taa9yb5qbv+6wLgiKVZ03Qfkc4jGRuiUQMQ8HGBD5pcNRnHeYM33zBvJE4/zJGjJJ8GScB+WmTsn9mORw==}
+    hasBin: true
     dev: true
 
   /balanced-match@1.0.2:
