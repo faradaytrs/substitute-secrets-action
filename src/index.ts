@@ -1,13 +1,11 @@
 import { getInput } from "@actions/core";
-import { globSync } from "glob";
+import { create } from "@actions/glob";
 import { readFile, writeFile } from "fs/promises";
 
 const input = getInput("input", { required: true });
 const substitutionRegexString = getInput("substitutionRegex", { required: true });
 const substitutionData = getInput("substitutionData", { required: true });
 const substitutionRegex = new RegExp(substitutionRegexString, "gm");
-
-const inputFiles = globSync(input);
 const substitutionMap = JSON.parse(substitutionData);
 
 const replacementFunction = (match: string) => {
@@ -17,12 +15,19 @@ const replacementFunction = (match: string) => {
     return substitutionMap[match];
 };
 
-const handleFilePromises = inputFiles.map(async (file) => {
-    const data = await readFile(file, "utf8");
-    const result = data.replace(substitutionRegex, replacementFunction);
-    return await writeFile(file, result);
-});
+const getFiles = async (pattern: string) => {
+    const globber = await create(pattern);
+    return await globber.glob();
+};
 
-Promise.all(handleFilePromises).then(() => {
-    console.log("done");
+getFiles(input).then((inputFiles) => {
+    const handleFilePromises = inputFiles.map(async (file) => {
+        const data = await readFile(file, "utf8");
+        const result = data.replace(substitutionRegex, replacementFunction);
+        return await writeFile(file, result);
+    });
+
+    Promise.all(handleFilePromises).then(() => {
+        console.log("done");
+    });
 });
