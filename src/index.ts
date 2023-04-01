@@ -20,14 +20,16 @@ const getFiles = async (pattern: string) => {
     return await globber.glob();
 };
 
-getFiles(input).then((inputFiles) => {
-    const handleFilePromises = inputFiles.map(async (file) => {
+async function run() {
+    const inputFiles = await getFiles(input);
+    await Promise.all(inputFiles.map(async (file) => {
         const data = await readFile(file, "utf8");
         const result = data.replace(substitutionRegex, replacementFunction);
         return await writeFile(file, result);
-    });
+    }));
+}
 
-    Promise.all(handleFilePromises).then(() => {
-        console.log("done");
-    });
-});
+run().then(() => {
+    console.log("done");
+})
+
