@@ -1,0 +1,19 @@
+name: Substitute secrets in file action
+description: Substitute GitHub Secrets and variables into one or more files
+author: Andrei Izotov
+inputs:
+  input:
+    required: true
+    description: The file or pattern to replace.
+  substitutionRegex:
+    required: true
+    description: A regex to match tokens. Must contain a capturing group.ßß
+  substitutionData:
+    required: true
+    description: JSON representation of the secrets and variables for substitution.
+runs:
+  using: node16
+  main: dist/index.js
+branding:
+  icon: dollar-sign
+  color: gray-dark
