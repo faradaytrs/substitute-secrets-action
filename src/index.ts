@@ -20,6 +20,11 @@ const replacementFunction = (file: string) => (match: string) => {
 
 async function run() {
     const inputFiles = await getFiles(input);
+    if (inputFiles.length === 0) {
+        console.warn("No files found to process");
+        return;
+    }
+    console.log("Found", inputFiles.length, "files to process");
     await Promise.all(
         inputFiles.map(async (file) => {
             const data = await readFile(file, "utf8");
