@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc",
-    "bundle": "ncc build src/index.ts -o out --minify"
+    "check": "tsc --noEmit",
+    "build": "ncc build src/index.ts -o dist --minify"
   },
   "dependencies": {
     "@actions/core": "1.10.0",
