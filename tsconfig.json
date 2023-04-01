@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+        "module": "es2020",
+        "target": "es2020",
+        "strict": true,
+        "allowJs": false,
+        "noImplicitAny": true,
+        "moduleResolution": "node",
+        "skipLibCheck": true,
+        "alwaysStrict": true,
+        "allowUnreachableCode": false,
+        "noUnusedLocals": true,
+        "forceConsistentCasingInFileNames": true,
+        "noFallthroughCasesInSwitch": true,
+        "importHelpers": true,
+        "isolatedModules": true,
+        "declaration": false,
+        "paths": {
+            "@/*": ["./src/*"]
+        },
+        "outDir": "dist"
+    },
+
+    "include": ["src/**/*"],
+    "exclude": ["src/test/**/*", "src/console/**/*", "src/test/**/*", "src/run-scripts/**/*"]
+}
