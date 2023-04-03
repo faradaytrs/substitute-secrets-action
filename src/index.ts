@@ -11,7 +11,6 @@ const substitutionMap = JSON.parse(substitutionData);
 
 const stats = new Map<string, number>();
 const replacementFunction = (file: string) => (match: string, content: string) => {
-    console.log("match", match, content);
     if (substitutionMap[content] == null) {
         console.warn(`No substitution data for ${content}`);
     }
