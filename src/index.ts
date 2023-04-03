@@ -13,6 +13,7 @@ const stats = new Map<string, number>();
 const replacementFunction = (file: string) => (match: string, content: string) => {
     if (substitutionMap[content] == null) {
         console.warn(`No substitution data for ${content}`);
+        return match;
     }
     stats.set(file, (stats.get(file) ?? 0) + 1);
     return substitutionMap[content];
