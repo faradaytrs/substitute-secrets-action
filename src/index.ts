@@ -10,13 +10,13 @@ const substitutionRegex = new RegExp(substitutionRegexString, "gm");
 const substitutionMap = JSON.parse(substitutionData);
 
 const stats = new Map<string, number>();
-const replacementFunction = (file: string) => (match: string, p1: unknown, p2: unknown, p3: unknown, p4: unknown) => {
-    console.log("match", match, p1, p2, p3, p4);
-    if (substitutionMap[match] == null) {
-        console.warn(`No substitution data for ${match}`);
+const replacementFunction = (file: string) => (match: string, content: string) => {
+    console.log("match", match, content);
+    if (substitutionMap[content] == null) {
+        console.warn(`No substitution data for ${content}`);
     }
     stats.set(file, stats.get(file) ?? 0 + 1);
-    return substitutionMap[match];
+    return substitutionMap[content];
 };
 
 async function run() {
