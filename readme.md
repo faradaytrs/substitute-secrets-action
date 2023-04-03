@@ -20,7 +20,7 @@ And you have configuration file that contains ${CONNECTIONSTRING} tokens that ne
   with:
 
     # Files specified by the glob pattern
-    # Any glob pattern supported by the `actions/checkout` action.
+    # Any glob pattern
     input: **/*.json
 
     # A regex to match tokens. Must contain a capturing group.
@@ -30,4 +30,4 @@ And you have configuration file that contains ${CONNECTIONSTRING} tokens that ne
     # Substitution data to use. This is a JSON string.
     # "${{ toJSON(secrets) }}" or "${{ toJSON(env) }}" or "${{ toJSON(vars) }}".
     substitutionData: ${{ toJSON(secrets) }}
-```
+````
