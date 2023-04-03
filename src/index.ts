@@ -6,13 +6,19 @@ import { getFiles } from "./helper";
 const input = getInput("input", { required: true });
 const substitutionRegexString = getInput("substitutionRegex", { required: true });
 const substitutionData = getInput("substitutionData", { required: true });
+const throwOnDataMissing = getInput("throwOnDataMissing", { required: false }) === "true";
 const substitutionRegex = new RegExp(substitutionRegexString, "gm");
 const substitutionMap = JSON.parse(substitutionData);
 
 const stats = new Map<string, number>();
 const replacementFunction = (file: string) => (match: string, content: string) => {
     if (substitutionMap[content] == null) {
-        console.warn(`No substitution data for ${content}`);
+        if (throwOnDataMissing) {
+            throw new Error(`No substitution data for ${content}`);
+        } else {
+            console.warn(`No substitution data for ${content}`);
+        }
+
         return match;
     }
     stats.set(file, (stats.get(file) ?? 0) + 1);

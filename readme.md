@@ -30,4 +30,7 @@ And you have configuration file that contains ${CONNECTIONSTRING} tokens that ne
     # Substitution data to use. This is a JSON string.
     # "${{ toJSON(secrets) }}" or "${{ toJSON(env) }}" or "${{ toJSON(vars) }}".
     substitutionData: ${{ toJSON(secrets) }}
+
+    # Whether to fail the action if a token is not found in the substitution data.
+    throwOnDataMissing: false
 ````

@@ -11,6 +11,10 @@ inputs:
   substitutionData:
     required: true
     description: JSON representation of the secrets and variables for substitution.
+  throwOnDataMissing:
+    required: false
+    description: Whether to throw an error if a substitution is missing.
+    default: "false"
 runs:
   using: node16
   main: dist/index.js
