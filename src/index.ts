@@ -10,7 +10,8 @@ const substitutionRegex = new RegExp(substitutionRegexString, "gm");
 const substitutionMap = JSON.parse(substitutionData);
 
 const stats = new Map<string, number>();
-const replacementFunction = (file: string) => (match: string) => {
+const replacementFunction = (file: string) => (match: string, p1, p2, p3, p4) => {
+    console.log("match", match, p1, p2, p3, p4);
     if (substitutionMap[match] == null) {
         console.warn(`No substitution data for ${match}`);
     }
