@@ -16,7 +16,7 @@ And you have configuration file that contains ${CONNECTIONSTRING} tokens that ne
 
 ```yaml
 - name: Substitute Secrets Action
-  uses: faradaytrs/substitute-secrets-action@v1.0.0
+  uses: faradaytrs/substitute-secrets-action@v2.1.0
   with:
 
     # Files specified by the glob pattern
