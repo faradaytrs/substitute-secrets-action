@@ -4,6 +4,7 @@
     "automergeType": "branch",
     "labels": ["renovate"],
     "timezone": "Asia/Shanghai",
+    "ignoreTests": true,
     "packageRules": [
         {
             "matchUpdateTypes": ["major"],
