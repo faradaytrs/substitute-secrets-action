@@ -1,6 +1,15 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:recommended"
-  ]
+    "extends": ["config:recommended"],
+    "automerge": true,
+    "automergeType": "branch",
+    "labels": ["renovate"],
+    "timezone": "Asia/Shanghai",
+    "packageRules": [
+        {
+            "matchUpdateTypes": ["major"],
+            "automergeType": "pr",
+            "automerge": false,
+        }
+    ],
+    "configMigration": true
 }
