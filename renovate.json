@@ -9,7 +9,7 @@
         {
             "matchUpdateTypes": ["major"],
             "automergeType": "pr",
-            "automerge": false,
+            "automerge": false
         }
     ],
     "configMigration": true
