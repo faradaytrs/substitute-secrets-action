@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@actions/core':
-    specifier: 1.11.0
-    version: 1.11.0
+    specifier: 1.11.1
+    version: 1.11.1
   '@actions/glob':
     specifier: 0.5.0
     version: 0.5.0
@@ -28,8 +28,8 @@ devDependencies:
 
 packages:
 
-  /@actions/core@1.11.0:
-    resolution: {integrity: sha512-I21jQUzEjbZolw3jFZ/0iHGCb+rePCww9MaA0SbVFae4FpBTQWP1GIvr/m5Y6GVaxrDz7p3RhBtpBzwkA3rPSA==}
+  /@actions/core@1.11.1:
+    resolution: {integrity: sha512-hXJCSrkwfA46Vd9Z3q4cpEpHB1rL5NG04+/rbqW9d3+CSvtB1tYe8UTpAlixa1vj0m/ULglfEK2UKxMGxCxv5A==}
     dependencies:
       '@actions/exec': 1.1.1
       '@actions/http-client': 2.1.0
@@ -44,7 +44,7 @@ packages:
   /@actions/glob@0.5.0:
     resolution: {integrity: sha512-tST2rjPvJLRZLuT9NMUtyBjvj9Yo0MiJS3ow004slMvm8GFM+Zv9HvMJ7HWzfUyJnGrJvDsYkWBaaG3YKXRtCw==}
     dependencies:
-      '@actions/core': 1.11.0
+      '@actions/core': 1.11.1
       minimatch: 3.1.2
     dev: false
 

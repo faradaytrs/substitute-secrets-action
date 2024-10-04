@@ -9,7 +9,7 @@
     "build": "ncc build src/index.ts -o dist --minify"
   },
   "dependencies": {
-    "@actions/core": "1.11.0",
+    "@actions/core": "1.11.1",
     "@actions/glob": "0.5.0"
   },
   "devDependencies": {
