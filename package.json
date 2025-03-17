@@ -16,7 +16,7 @@
     "typescript": "5.8.2",
     "@types/node": "20.17.24",
     "@vercel/ncc": "0.38.3",
-    "vitest": "3.0.8"
+    "vitest": "3.0.9"
   },
   "keywords": [],
   "author": "",
