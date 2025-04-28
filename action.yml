@@ -17,7 +17,7 @@ inputs:
     default: "false"
 runs:
   using: node20
-  main: dist/index.js
+  main: dist/index.cjs
 branding:
   icon: dollar-sign
   color: gray-dark
