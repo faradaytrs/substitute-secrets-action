@@ -7,7 +7,7 @@
     "scripts": {
         "test": "vitest src/tests",
         "check": "tsc --noEmit",
-        "build": "esbuild src/index.ts --bundle --minify --sourcemap --platform=node --target=node20 --outfile=dist/index.cjs"
+        "build": "esbuild src/index.ts --bundle --minify --sourcemap --platform=node --target=node24 --outfile=dist/index.cjs"
     },
     "dependencies": {
         "@actions/core": "1.11.1",

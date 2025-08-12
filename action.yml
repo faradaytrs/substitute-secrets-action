@@ -16,7 +16,7 @@ inputs:
     description: Whether to throw an error if a substitution is missing.
     default: "false"
 runs:
-  using: node20
+  using: node24
   main: dist/index.cjs
 branding:
   icon: dollar-sign
