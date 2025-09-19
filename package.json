@@ -16,7 +16,7 @@
     "devDependencies": {
         "typescript": "5.9.2",
         "@types/node": "20.19.17",
-        "esbuild": "0.25.9",
+        "esbuild": "0.25.10",
         "vitest": "3.2.4"
     },
     "keywords": [],
