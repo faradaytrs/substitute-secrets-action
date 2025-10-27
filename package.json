@@ -17,7 +17,7 @@
         "typescript": "5.9.3",
         "@types/node": "20.19.23",
         "esbuild": "0.25.11",
-        "vitest": "4.0.3"
+        "vitest": "4.0.4"
     },
     "keywords": [],
     "author": "",
