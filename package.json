@@ -15,7 +15,7 @@
     },
     "devDependencies": {
         "typescript": "5.9.3",
-        "@types/node": "20.19.23",
+        "@types/node": "24.9.1",
         "esbuild": "0.25.11",
         "vitest": "4.0.4"
     },
