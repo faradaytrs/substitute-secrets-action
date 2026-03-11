@@ -1,5 +1,5 @@
 import { it, expect } from "vitest";
-import { getFiles } from "../helper";
+import { getFiles } from "../helper.js";
 
 it("input files works", async () => {
     const files = await getFiles("*");

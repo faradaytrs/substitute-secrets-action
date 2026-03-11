@@ -1,7 +1,7 @@
 import { getInput, setFailed } from "@actions/core";
 
 import { readFile, writeFile } from "fs/promises";
-import { getFiles } from "./helper";
+import { getFiles } from "./helper.js";
 
 const input = getInput("input", { required: true });
 const substitutionRegexString = getInput("substitutionRegex", { required: true });
